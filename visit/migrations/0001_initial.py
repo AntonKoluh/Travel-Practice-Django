@@ -9,18 +9,32 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('project', '0001_initial'),
+        ("project", "0001_initial"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Visit',
+            name="Visit",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('place_id', models.IntegerField(max_length=20)),
-                ('is_visited', models.BooleanField(default=False)),
-                ('notes', models.TextField()),
-                ('project', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='project.projects')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("place_id", models.IntegerField(max_length=20)),
+                ("is_visited", models.BooleanField(default=False)),
+                ("notes", models.TextField()),
+                (
+                    "project",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="project.projects",
+                    ),
+                ),
             ],
         ),
     ]

@@ -55,9 +55,11 @@ class PlaceViewSet(viewsets.ModelViewSet):
         invalid_fields = set(request.data.keys()) - allowed_field
 
         if invalid_fields:
-            raise ValidationError({
-                "detail": f"PATCH can only update {', '.join(allowed_field)}",
-                "invalid_fields": list(invalid_fields)
-            })
+            raise ValidationError(
+                {
+                    "detail": f"PATCH can only update {', '.join(allowed_field)}",
+                    "invalid_fields": list(invalid_fields),
+                }
+            )
 
         return super().partial_update(request, *args, **kwargs)

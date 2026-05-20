@@ -21,5 +21,6 @@ from rest_framework.authtoken import views
 urlpatterns = [
     path("api/v1/users/", include("users.urls")),
     path("api/v1/projects/", include("project.urls")),
+    path("api/v1/places/", include("visit.urls")),
     path('api-token-auth/', views.obtain_auth_token)
 ]

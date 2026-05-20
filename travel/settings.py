@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     "django_filters",
+    'visit',
     'users',
     'project',
     'rest_framework',
